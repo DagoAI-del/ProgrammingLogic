@@ -28,6 +28,8 @@ class Program
                 a--;                  // Decrease 'a' by 1 each time
             }
 
+            //Problem 4: While Loop – Multiples of 10 from 10 to 1000
+
             int num = 10;
             while (num <= 1000)
             {
