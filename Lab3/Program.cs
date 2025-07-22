@@ -48,80 +48,75 @@ class Program
 
             }
             //Problem 6: Days of the Week (1–7)
-
-             string[] days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            string[] days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 
             Console.Write("Enter a number from 1 to 7: ");
-              string userInput = Console.ReadLine();
-             try
-             {
-            // Try to convert the input string into a interger
-              int dayNumber = Convert.ToInt32(userInput);
+            string input = Console.ReadLine();
 
-            // Check if the number is in the valid range
-             if (dayNumber >= 1 && dayNumber <= 7)
-             {
-            // Display the matching day name (array is 0-based, so subtract 1)
-                 Console.WriteLine("The day is: " + days[dayNumber - 1]);
-               }
-               else
+            if (int.TryParse(input, out int dayNumber))
+            {
+                if (dayNumber >= 1 && dayNumber <= 7)
                 {
-            Console.WriteLine("Please enter a number between 1 and 7.");
-               }
-             }
-               catch
-              {
-            // If conversion fails, show an error message
-            Console.WriteLine("Invalid input. Make sure you enter a number like 1, 2, or 3.");
-             }
-
-            //Problem 7: Favorite Books and Authors
-            // Array of 3 favorite book titles
-            string[] books = { "La storia", "La revoltee", "La ronde des jours" };
-
-            // Array of authors corresponding to each book
-            string[] authors = { "Elsa Morente", "Guy des Cars", "Bernard Dadie" };
-
-            // Loop through each book and print the title with its author
-            for (int i = 0; i < books.Length; i++)
-            {
-                Console.WriteLine(books[i] + " by " + authors[i]);
+                    Console.WriteLine($"Day {dayNumber} is {days[dayNumber - 1]}.");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid number. Please enter a value between 1 and 7.");
+                }
             }
-
-            //Problem 8: Temperature Tracker
-
-            // Create an integer array with 5 temperature values
-            int[] temperatures = { 91, 52, 77, 88, 79 };
-
-            // Sort the array in ascending order
-            Array.Sort(temperatures);
-
-            // Print sorted temperatures
-            Console.WriteLine("Temperatures in ascending order:");
-            foreach (int temp in temperatures)
+            else
             {
-                Console.WriteLine(temp);
+                Console.WriteLine("Invalid input. Please enter a numeric value.");
+
+
+                //Problem 7: Favorite Books and Authors
+                // Array of 3 favorite book titles
+                string[] books = { "La storia", "La revoltee", "La ronde des jours" };
+
+                // Array of authors corresponding to each book
+                string[] authors = { "Elsa Morente", "Guy des Cars", "Bernard Dadie" };
+
+                // Loop through each book and print the title with its author
+                for (int i = 0; i < books.Length; i++)
+                {
+                    Console.WriteLine(books[i] + " by " + authors[i]);
+                }
+
+                //Problem 8: Temperature Tracker
+
+                // Create an integer array with 5 temperature values
+                int[] temperatures = { 91, 52, 77, 88, 79 };
+
+                // Sort the array in ascending order
+                Array.Sort(temperatures);
+
+                // Print sorted temperatures
+                Console.WriteLine("Temperatures in ascending order:");
+                foreach (int temp in temperatures)
+                {
+                    Console.WriteLine(temp);
+                }
+
+                // Print the lowest and highest temperatures
+                Console.WriteLine("Lowest temperature: " + temperatures[0]);
+                Console.WriteLine("Highest temperature: " + temperatures[temperatures.Length - 1]);
+
+                //Problem 9: Reverse Countdown
+                // Declare an integer array with values from 5 to 1
+                int[] numbS = { 5, 4, 3, 2, 1 };
+
+                // Reverse the array using Array.Reverse()
+                Array.Reverse(numbS);
+
+                // Use a for loop to display the reversed array
+                Console.WriteLine("Reversed array:");
+                for (int i = 0; i < numbS.Length; i++)
+                {
+                    Console.WriteLine(numbS[i]);
+                }
             }
-
-            // Print the lowest and highest temperatures
-            Console.WriteLine("Lowest temperature: " + temperatures[0]);
-            Console.WriteLine("Highest temperature: " + temperatures[temperatures.Length - 1]);
-    
-             //Problem 9: Reverse Countdown
-            // Declare an integer array with values from 5 to 1
-        int[] numbS = { 5, 4, 3, 2, 1 };
-
-        // Reverse the array using Array.Reverse()
-        Array.Reverse(numbS);
-
-        // Use a for loop to display the reversed array
-        Console.WriteLine("Reversed array:");
-        for (int i = 0; i < numbS.Length; i++)
-        {
-            Console.WriteLine(numbS[i]);
         }
-        }
-    }
 
     }
+}
 
